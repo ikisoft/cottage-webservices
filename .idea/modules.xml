@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cottage-webservices.iml" filepath="$PROJECT_DIR$/.idea/modules/cottage-webservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cottage-webservices_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cottage-webservices_main.iml" group="cottage-webservices" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cottage-webservices_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cottage-webservices_test.iml" group="cottage-webservices" />
+    </modules>
+  </component>
+</project>
