@@ -1,9 +1,8 @@
 package cottage_rest_services;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.hibernate.validator.constraints.ParameterScriptAssert;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -20,12 +19,12 @@ public class CottageController {
     Cottage cottage;
 
     @RequestMapping(method = RequestMethod.POST)
-    public void cottage(@RequestParam(value = "ownerId") Long ownerId,
-                         @RequestParam(value = "address") String address,
-                         @RequestParam(value = "size") double size,
-                         @RequestParam(value = "rooms") int rooms,
-                         @RequestParam(value = "beds") int beds,
-                         @RequestParam(value = "description") String description) {
+    public void cottage(@RequestParam(value = "ownerId") long ownerId,
+                        @RequestParam(value = "address") String address,
+                        @RequestParam(value = "size") double size,
+                        @RequestParam(value = "rooms") int rooms,
+                        @RequestParam(value = "beds") int beds,
+                        @RequestParam(value = "description") String description) {
 
         cottage = new Cottage(id.incrementAndGet(), ownerId, address, size, rooms, beds, description);
 
@@ -46,9 +45,25 @@ public class CottageController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public void cottage(){
+    public void getAllCottages() {
+        System.out.println("get all cottages");
+        //return all
 
+    }
 
+    @RequestMapping(value = "/{cottageId}", method = RequestMethod.GET)
+    public void getCottage(@PathVariable long cottageId) {
+        System.out.println("get cottage " + cottageId);
+    }
+
+    @RequestMapping(value = "/{cottageId}", method = RequestMethod.PUT)
+    public void putCottage(@PathVariable long cottageId) {
+        System.out.println("put cottage " + cottageId);
+    }
+
+    @RequestMapping(value = "/{cottageId}", method = RequestMethod.DELETE)
+    public void deleteCottage(@PathVariable long cottageId) {
+        System.out.println("delete cottage " + cottageId);
     }
 
 

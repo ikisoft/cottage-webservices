@@ -62,4 +62,29 @@ public class Cottage {
     public String getDescription() {
         return description;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
+    }
+
+    public void setRooms(int rooms) {
+        this.rooms = rooms;
+    }
+
+    public void setBeds(int beds) {
+        this.beds = beds;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }
