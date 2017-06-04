@@ -1,11 +1,9 @@
-package cottage_rest_services;
+package cottage_rest_services.landlord;
 
-import com.sun.org.apache.bcel.internal.generic.LAND;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
 import java.util.Date;
 import java.util.List;
 

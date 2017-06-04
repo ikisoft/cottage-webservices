@@ -1,4 +1,4 @@
-package cottage_rest_services;
+package cottage_rest_services.helpers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

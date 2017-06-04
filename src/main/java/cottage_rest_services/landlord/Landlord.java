@@ -1,4 +1,4 @@
-package cottage_rest_services;
+package cottage_rest_services.landlord;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
 

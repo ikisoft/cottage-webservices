@@ -1,39 +1,42 @@
-package cottage_rest_services;
+package cottage_rest_services.cottage;
 
 import sun.plugin.dom.core.CoreConstants;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Max on 26.5.2017.
  */
 
-
+@Entity
+@Table
 public class Cottage {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @Column
+    private Date dateCreated;
+
+    @Column
     private long ownerId;
+
+    @Column
     private String address;
+
+    @Column
     private double size;
+
+    @Column
     private int rooms;
+
+    @Column
     private int beds;
+
+    @Column
     private String description;
-
-    public Cottage(long id, long ownerId, String address, double size, int rooms,
-                   int beds, String description){
-
-        this.id = id;
-        this.ownerId = ownerId;
-        this.address = address;
-        this.size = size;
-        this.rooms = rooms;
-        this.beds = beds;
-        this.description = description;
-
-    }
 
     public long getId(){
         return id;
@@ -63,8 +66,13 @@ public class Cottage {
         return description;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setDateCreated(Date dateCreated){
+
+        this.dateCreated = dateCreated;
+    }
+
+    public void setOwnerId(long ownerId) {
+        this.ownerId = ownerId;
     }
 
     public void setAddress(String address) {

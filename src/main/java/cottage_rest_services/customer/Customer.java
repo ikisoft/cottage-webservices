@@ -1,26 +1,33 @@
-package cottage_rest_services;
+package cottage_rest_services.customer;
+
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by maxikahe on 27.5.2017.
  */
+
+@Entity
+@Table
 public class Customer {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @Column
+    private Date dateCreated;
+
+    @Column
     private String lastName;
+
+    @Column
     private String firstName;
+
+    @Column
     private String email;
+
+    @Column
     private int phoneNumber;
-
-    public Customer(long id, String lastName, String firstName, String email, int phoneNumber) {
-
-        this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-
-
-    }
 
     public long getId() {
         return id;
@@ -42,8 +49,10 @@ public class Customer {
         return phoneNumber;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setDateCreated(Date dateCreated){
+
+        this.dateCreated = dateCreated;
+
     }
 
     public void setLastName(String lastName) {
