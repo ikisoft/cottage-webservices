@@ -26,14 +26,15 @@ public class LandlordController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Landlord add(@RequestBody Landlord landlord) {
+    public Landlord add(Landlord landlord) {
         Landlord model = new Landlord();
-        model.setDateCreated(new Date());
+        //model.setDateCreated(new Date());
+        model.setUsername(landlord.getUsername());
         model.setLastName(landlord.getFirstName());
         model.setFirstName(landlord.getLastName());
         model.setEmail(landlord.getEmail());
         model.setPhoneNumber(landlord.getPhoneNumber());
-        model.setPassword(bCryptPasswordEncoder.encode(landlord.getPassword()));
+        model.setPassword(landlord.getPassword());
         return landlordRepository.saveAndFlush(model);
     }
 
@@ -53,10 +54,8 @@ public class LandlordController {
             model.setPhoneNumber(landlord.getPhoneNumber());
             return landlordRepository.saveAndFlush(model);
         }
-
         return null;
     }
-
 
     //TODO Delete not working ???
 /*    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

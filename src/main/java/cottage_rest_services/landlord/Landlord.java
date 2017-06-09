@@ -1,7 +1,5 @@
 package cottage_rest_services.landlord;
 
-import org.springframework.security.crypto.bcrypt.BCrypt;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,28 +14,27 @@ public class Landlord {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
+   // @Column
+    //private Date dateCreated;
     @Column
-    private Date dateCreated;
-
+    private String username;
     @Column
     private String lastName;
-
     @Column
     private String firstName;
-
     @Column
     private String email;
-
     @Column
     private String phoneNumber;
-
     @Column
     private String password;
 
-
     public long getId() {
         return id;
+    }
+
+    public String getUsername(){
+        return username;
     }
 
     public String getLastName() {
@@ -60,8 +57,12 @@ public class Landlord {
         return password;
     }
 
-    public void setDateCreated(Date dateCreated) {
+/*    public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
+    }*/
+
+    public void setUsername(String username){
+        this.username = username;
     }
 
     public void setLastName(String lastName) {
