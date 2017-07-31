@@ -15,56 +15,56 @@ public class Customer {
     private long id;
 
     @Column
-    private Date dateCreated;
+    private Date datecreated;
 
     @Column
-    private String lastName;
+    private String lastname;
 
     @Column
-    private String firstName;
+    private String firstname;
 
     @Column
     private String email;
 
     @Column
-    private int phoneNumber;
+    private int phonenumber;
 
     public long getId() {
         return id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public int getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setDateCreated(Date dateCreated){
+    public void setDateCreated(Date datecreated) {
 
-        this.dateCreated = dateCreated;
+        this.datecreated = datecreated;
 
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhonenumber(int phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public void setEmail(String email) {

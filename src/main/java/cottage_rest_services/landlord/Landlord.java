@@ -1,7 +1,6 @@
 package cottage_rest_services.landlord;
 
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Created by maxikahe on 27.5.2017.
@@ -19,13 +18,13 @@ public class Landlord {
     @Column
     private String username;
     @Column
-    private String lastName;
+    private String lastname;
     @Column
-    private String firstName;
+    private String firstname;
     @Column
     private String email;
     @Column
-    private String phoneNumber;
+    private String phonenumber;
     @Column
     private String password;
 
@@ -37,20 +36,20 @@ public class Landlord {
         return username;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
     public String getPassword() {
@@ -65,20 +64,20 @@ public class Landlord {
         this.username = username;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public void setPassword(String password) {

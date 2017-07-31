@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,11 +29,11 @@ public class LandlordController {
         Landlord model = new Landlord();
         //model.setDateCreated(new Date());
         model.setUsername(landlord.getUsername());
-        model.setLastName(landlord.getFirstName());
-        model.setFirstName(landlord.getLastName());
+        model.setLastname(landlord.getFirstname());
+        model.setFirstname(landlord.getLastname());
         model.setEmail(landlord.getEmail());
-        model.setPhoneNumber(landlord.getPhoneNumber());
-        model.setPassword(landlord.getPassword());
+        model.setPhonenumber(landlord.getPhonenumber());
+        model.setPassword(bCryptPasswordEncoder.encode(landlord.getPassword()));
         return landlordRepository.saveAndFlush(model);
     }
 
@@ -48,10 +47,10 @@ public class LandlordController {
         Landlord model = landlordRepository.findOne(id);
 
         if (model != null) {
-            model.setLastName(landlord.getFirstName());
-            model.setFirstName(landlord.getLastName());
+            model.setLastname(landlord.getFirstname());
+            model.setFirstname(landlord.getLastname());
             model.setEmail(landlord.getEmail());
-            model.setPhoneNumber(landlord.getPhoneNumber());
+            model.setPhonenumber(landlord.getPhonenumber());
             return landlordRepository.saveAndFlush(model);
         }
         return null;

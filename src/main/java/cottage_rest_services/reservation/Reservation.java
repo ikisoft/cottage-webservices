@@ -16,10 +16,10 @@ public class Reservation {
     private long id;
 
     @Column
-    private Date dateCreated;
+    private Date datecreated;
 
     @Column
-    private Date dateExpires;
+    private Date dateexpires;
 
     @Column
     private long landlordId;
@@ -29,19 +29,19 @@ public class Reservation {
 
 
     public Date getDateCreated() {
-        return dateCreated;
+        return datecreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setDateCreated(Date datecreated) {
+        this.datecreated = datecreated;
     }
 
     public Date getDateExpires() {
-        return dateExpires;
+        return dateexpires;
     }
 
-    public void setDateExpires(Date dateExpires) {
-        this.dateExpires = dateExpires;
+    public void setDateExpires(Date dateexpires) {
+        this.dateexpires = dateexpires;
     }
 
     public long getLandlordId() {

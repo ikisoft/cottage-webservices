@@ -28,7 +28,7 @@ public class CottageController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Cottage add(@RequestBody Cottage cottage) {
+    public Cottage add(Cottage cottage) {
         Cottage model = new Cottage();
         model.setDateCreated(new Date());
         model.setOwnerId(cottage.getOwnerId());

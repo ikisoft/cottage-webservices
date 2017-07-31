@@ -27,11 +27,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
     }
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/landlord").permitAll();
-        http.authorizeRequests().anyRequest().fullyAuthenticated();
-        http.httpBasic();
+        //http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/landlord").permitAll();
+        //http.authorizeRequests().anyRequest().fullyAuthenticated();
+        //http.httpBasic();
         http.csrf().disable();
     }
 

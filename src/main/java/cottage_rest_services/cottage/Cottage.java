@@ -18,10 +18,10 @@ public class Cottage {
     private long id;
 
     @Column
-    private Date dateCreated;
+    private Date datecreated;
 
     @Column
-    private long ownerId;
+    private long ownerid;
 
     @Column
     private String address;
@@ -43,7 +43,7 @@ public class Cottage {
     }
 
     public long getOwnerId() {
-        return ownerId;
+        return ownerid;
     }
 
     public String getAddress() {
@@ -68,11 +68,11 @@ public class Cottage {
 
     public void setDateCreated(Date dateCreated){
 
-        this.dateCreated = dateCreated;
+        this.datecreated = dateCreated;
     }
 
     public void setOwnerId(long ownerId) {
-        this.ownerId = ownerId;
+        this.ownerid = ownerId;
     }
 
     public void setAddress(String address) {

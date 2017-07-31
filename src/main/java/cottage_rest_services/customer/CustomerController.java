@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/api/cutomer")
+@RequestMapping("/api/customer")
 public class CustomerController {
 
     @Autowired
@@ -23,13 +23,13 @@ public class CustomerController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Customer add(@RequestBody Customer customer) {
+    public Customer add(Customer customer) {
         Customer model = new Customer();
         model.setDateCreated(new Date());
-        model.setLastName(customer.getFirstName());
-        model.setFirstName(customer.getLastName());
+        model.setLastname(customer.getFirstname());
+        model.setFirstname(customer.getLastname());
         model.setEmail(customer.getEmail());
-        model.setPhoneNumber(customer.getPhoneNumber());
+        model.setPhonenumber(customer.getPhonenumber());
         return customerRepository.saveAndFlush(model);
     }
 
