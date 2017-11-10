@@ -1,6 +1,5 @@
 package cottage_rest_services.cottage;
 
-import sun.plugin.dom.core.CoreConstants;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -1,6 +1,5 @@
 package cottage_rest_services.customer;
 
-import cottage_rest_services.landlord.Landlord;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

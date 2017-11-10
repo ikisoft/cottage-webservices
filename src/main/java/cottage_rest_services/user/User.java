@@ -1,6 +1,7 @@
-package cottage_rest_services.landlord;
+package cottage_rest_services.user;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by maxikahe on 27.5.2017.
@@ -8,13 +9,13 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Landlord {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-   // @Column
-    //private Date dateCreated;
+    @Column
+    private Date dateCreated;
     @Column
     private String username;
     @Column
@@ -27,6 +28,8 @@ public class Landlord {
     private String phonenumber;
     @Column
     private String password;
+    @Column
+    private boolean landlord;
 
     public long getId() {
         return id;
@@ -56,9 +59,13 @@ public class Landlord {
         return password;
     }
 
-/*    public void setDateCreated(Date dateCreated) {
+    public boolean isLandlord() {
+        return landlord;
+    }
+
+    public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
-    }*/
+    }
 
     public void setUsername(String username){
         this.username = username;
@@ -83,5 +90,9 @@ public class Landlord {
     public void setPassword(String password) {
         this.password = password;
 
+    }
+
+    public void setLandlord(boolean landlord) {
+        this.landlord = landlord;
     }
 }
