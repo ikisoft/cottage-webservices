@@ -1,9 +1,12 @@
 package cottage_rest_services.user;
 
+import com.sun.org.apache.xml.internal.security.algorithms.SignatureAlgorithm;
+import cottage_rest_services.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +37,8 @@ public class UserController {
         model.setFirstname(user.getLastname());
         model.setEmail(user.getEmail());
         model.setPhonenumber(user.getPhonenumber());
-        model.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        model.setPassword(user.getPassword());
+        //model.setPassword(password);
         model.setLandlord(user.isLandlord());
         return userRepository.saveAndFlush(model);
     }
@@ -55,6 +59,17 @@ public class UserController {
             model.setPhonenumber(user.getPhonenumber());
             return userRepository.saveAndFlush(model);
         }
+        return null;
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public User update(@RequestBody String email, String password) {
+        User model = userRepository.findByEmail(email);
+
+        if(model.getPassword() == password) {
+            return model;
+        }
+
         return null;
     }
 

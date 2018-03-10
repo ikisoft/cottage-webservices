@@ -1,5 +1,9 @@
 package cottage_rest_services.user;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,6 +14,8 @@ import java.util.Date;
 @Entity
 @Table
 public class User {
+
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,8 +32,12 @@ public class User {
     private String email;
     @Column
     private String phonenumber;
+    @JsonIgnore
     @Column
     private String password;
+    @JsonIgnore
+    @Column
+    private String[] roles;
     @Column
     private boolean landlord;
 
@@ -59,6 +69,10 @@ public class User {
         return password;
     }
 
+    public String[] getRoles() {
+        return roles;
+    }
+
     public boolean isLandlord() {
         return landlord;
     }
@@ -88,8 +102,12 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = PASSWORD_ENCODER.encode(password);
 
+    }
+
+    public void setRoles(String[] roles) {
+        this.roles = roles;
     }
 
     public void setLandlord(boolean landlord) {

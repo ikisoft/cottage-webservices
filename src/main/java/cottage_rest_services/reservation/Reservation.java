@@ -25,6 +25,9 @@ public class Reservation {
     private long landlordId;
 
     @Column
+    private long cottageId;
+
+    @Column
     private long customerId;
 
 
@@ -59,4 +62,10 @@ public class Reservation {
     public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
+
+    public long getCottageId() {
+        return cottageId;
+    }
+
+    public void setCottageId(long cottageId) { this.cottageId = cottageId; }
 }

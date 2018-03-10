@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class LandlordUserDetailsService implements UserDetailsService {
+public class DetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -23,6 +23,7 @@ public class LandlordUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user = userRepository.findByUsername(username);
+        //User user = userRepository.findByEmail(email);
 
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),

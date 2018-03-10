@@ -49,10 +49,22 @@ public class DataLoader implements ApplicationRunner {
         for(int i = 0; i < 5; i++){
             LoadCottages(
                     "Testikatu " + i,
+                    "Kuopio",
                     random.nextInt(50) + 10,
                     random.nextInt(5) + 1,
                     random.nextInt(3) + 2,
-                    "Tässä on kuvaus");
+                    random.nextInt(1000) + 50,
+                    "Tässä on kuvaus",
+                    "" + random.nextInt(15));
+            LoadCottages(
+                    "Testikatu " + i,
+                    "Joensuu",
+                    random.nextInt(50) + 10,
+                    random.nextInt(5) + 1,
+                    random.nextInt(3) + 2,
+                    random.nextInt(1000) + 50,
+                    "Tässä on kuvaus",
+                    "" + random.nextInt(15));
         }
 
         loadUsers(
@@ -62,6 +74,7 @@ public class DataLoader implements ApplicationRunner {
                 "max.ikaheimo@gmail.com",
                 "123123",
                 "admin",
+                 new String[] {"ROLE_USER", "ROLE_ADMIN"},
                 true);
     }
 
@@ -76,17 +89,23 @@ public class DataLoader implements ApplicationRunner {
      * @param  description additional description for the cottage
      */
     private void LoadCottages(String address,
+                              String city,
                               int size,
                               int rooms,
                               int beds,
-                              String description){
+                              double price,
+                              String description,
+                              String imgurl){
 
         cottage = new Cottage();
         cottage.setAddress(address);
+        cottage.setCity(city);
         cottage.setSize(size);
         cottage.setRooms(rooms);
         cottage.setBeds(beds);
+        cottage.setPrice(price);
         cottage.setDescription(description);
+        cottage.setImgurl(imgurl);
 
         cottageRepository.save(cottage);
 
@@ -98,7 +117,7 @@ public class DataLoader implements ApplicationRunner {
                            String email,
                            String phonenumber,
                            String password,
-                           boolean landlord){
+                           String[] roles, boolean landlord){
 
         user = new User();
 
@@ -109,6 +128,7 @@ public class DataLoader implements ApplicationRunner {
         user.setEmail(email);
         user.setPhonenumber(phonenumber);
         user.setPassword(password);
+        user.setRoles(roles);
         user.setLandlord(landlord);
 
         userRepository.save(user);

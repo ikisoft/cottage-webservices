@@ -28,6 +28,7 @@ public class ReservationController {
         model.setDateExpires(reservation.getDateExpires());
         model.setLandlordId(reservation.getLandlordId());
         model.setCustomerId(reservation.getCustomerId());
+        model.setCottageId(reservation.getCottageId());
         return reservationRepository.saveAndFlush(model);
     }
 

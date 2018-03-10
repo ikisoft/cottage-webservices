@@ -26,6 +26,9 @@ public class Cottage {
     private String address;
 
     @Column
+    private String city;
+
+    @Column
     private double size;
 
     @Column
@@ -35,7 +38,13 @@ public class Cottage {
     private int beds;
 
     @Column
+    private double price;
+
+    @Column
     private String description;
+
+    @Column
+    private String imgurl;
 
     public long getId(){
         return id;
@@ -47,6 +56,10 @@ public class Cottage {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     public double getSize() {
@@ -61,8 +74,14 @@ public class Cottage {
         return beds;
     }
 
+    public double getPrice() { return price; }
+
     public String getDescription() {
         return description;
+    }
+
+    public String getImgurl() {
+        return imgurl;
     }
 
     public void setDateCreated(Date dateCreated){
@@ -78,6 +97,10 @@ public class Cottage {
         this.address = address;
     }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public void setSize(double size) {
         this.size = size;
     }
@@ -90,8 +113,14 @@ public class Cottage {
         this.beds = beds;
     }
 
+    public void setPrice(double price) { this.price = price; }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
     }
 
 }

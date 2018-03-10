@@ -33,10 +33,13 @@ public class CottageController {
         model.setDateCreated(new Date());
         model.setOwnerId(cottage.getOwnerId());
         model.setAddress(cottage.getAddress());
+        model.setCity(cottage.getCity());
         model.setSize(cottage.getSize());
         model.setRooms(cottage.getRooms());
         model.setBeds(cottage.getBeds());
+        model.setPrice(cottage.getPrice());
         model.setDescription(cottage.getDescription());
+        model.setImgurl(cottage.getImgurl());
         return cottageRepository.saveAndFlush(model);
     }
 
@@ -51,10 +54,13 @@ public class CottageController {
 
         if (model != null) {
             model.setAddress(cottage.getAddress());
+            model.setCity(cottage.getCity());
             model.setSize(cottage.getSize());
             model.setRooms(cottage.getRooms());
             model.setBeds(cottage.getBeds());
+            model.setPrice(cottage.getPrice());
             model.setDescription(cottage.getDescription());
+            model.setImgurl(cottage.getImgurl());
             return cottageRepository.saveAndFlush(model);
         }
 
